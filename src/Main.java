@@ -6,19 +6,21 @@ public class Main {
         Curador dende = new Curador("Dende", 100,20);
         Saiyajin goku = new Saiyajin("Goku", 200,40);
 
-        System.out.println(" ¡Comienza la batalla ! ");
+        Personaje [] personajes = {gohan, cell, dende, goku};
 
-        gohan.atacar(cell);
-        cell.atacar(gohan);
-        gohan.atacar(cell);
-        dende.atacar(gohan);
-        goku.atacar(cell);
+        for (int i = 0; i < personajes.length-1; i++) {
+            Personaje atacante = personajes[i];
+            Personaje enemigo = personajes[i+1];
+
+            atacante.atacar(enemigo);
+            System.out.println(enemigo.mostrarInformacion());
+
+        }
+        System.out.println(" Fin de la batalla ! ");
 
 
-        System.out.println(gohan.mostrarInformacion());
-        System.out.println(cell.mostrarInformacion());
-        System.out.println(dende.mostrarInformacion());
-        System.out.println(goku.mostrarInformacion());
+
+
 
     }
 }
